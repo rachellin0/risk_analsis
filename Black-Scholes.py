@@ -82,3 +82,12 @@ def calculate_var(options_data, bonds_data, confidence_level=0.05):
     return options_portfolio_var, bonds_portfolio_var
 
 
+
+#calculate
+bonds_data, options_data = load_and_clean_data('bonds_data.csv', 'options_data.csv')
+options_data = calculate_option_prices(options_data)
+bonds_data = calculate_duration_and_convexity(bonds_data)
+options_var, bonds_var = calculate_var(options_data, bonds_data)
+
+
+
